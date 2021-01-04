@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/pilih2">
+    <fragment
+        android:id="@+id/pilih2"
+        android:name="com.example.oop2.fragments.Pilih"
+        android:label="Pilih Data"
+        tools:layout="@layout/fragment_pilih" >
+        <action
+            android:id="@+id/action_pilih2_to_listKeluarga"
+            app:destination="@id/listKeluarga" />
+        <action
+            android:id="@+id/action_pilih2_to_listKelahiran"
+            app:destination="@id/listKelahiran" />
+    </fragment>
+    <fragment
+        android:id="@+id/listKeluarga"
+        android:name="com.example.oop2.fragments.keluargafragment.listKeluarga"
+        android:label="List Keluarga"
+        tools:layout="@layout/fragment_list_keluarga" >
+        <action
+            android:id="@+id/action_listKeluarga_to_pilih2"
+            app:destination="@id/pilih2" />
+        <action
+            android:id="@+id/action_listKeluarga_to_addKeluarga"
+            app:destination="@id/addKeluarga" />
+        <action
+            android:id="@+id/action_listKeluarga_to_updateKeluarga"
+            app:destination="@id/updateKeluarga" />
+    </fragment>
+    <fragment
+        android:id="@+id/addKeluarga"
+        android:name="com.example.oop2.fragments.keluargafragment.addKeluarga"
+        android:label="Tambah Data Keluarga"
+        tools:layout="@layout/fragment_add_keluarga" >
+        <action
+            android:id="@+id/action_addKeluarga_to_listKeluarga"
+            app:destination="@id/listKeluarga" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateKeluarga"
+        android:name="com.example.oop2.fragments.update.updateKeluarga"
+        android:label="Update Data Keluarga"
+        tools:layout="@layout/fragment_update_keluarga" >
+        <action
+            android:id="@+id/action_updateKeluarga_to_listKeluarga"
+            app:destination="@id/listKeluarga" />
+        <argument
+            android:name="currentFamily"
+            app:argType="com.example.oop2.data.keluarga.Keluarga" />
+    </fragment>
+    <fragment
+        android:id="@+id/listKelahiran"
+        android:name="com.example.oop2.fragments.kelahiranfragment.ListKelahiran"
+        android:label="List Kelahiran"
+        tools:layout="@layout/fragment_list_kelahiran" >
+        <action
+            android:id="@+id/action_listKelahiran_to_pilih2"
+            app:destination="@id/pilih2" />
+        <action
+            android:id="@+id/action_listKelahiran_to_addKelahiran"
+            app:destination="@id/addKelahiran" />
+        <action
+            android:id="@+id/action_listKelahiran_to_updateKelahiran"
+            app:destination="@id/updateKelahiran" />
+    </fragment>
+    <fragment
+        android:id="@+id/addKelahiran"
+        android:name="com.example.oop2.fragments.kelahiranfragment.AddKelahiran"
+        android:label="Tambah Data Kelahiran"
+        tools:layout="@layout/fragment_add_kelahiran" >
+        <action
+            android:id="@+id/action_addKelahiran_to_listKelahiran"
+            app:destination="@id/listKelahiran" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateKelahiran"
+        android:name="com.example.oop2.fragments.update.UpdateKelahiran"
+        android:label="Update Data Kelahiran"
+        tools:layout="@layout/fragment_update_kelahiran" >
+        <action
+            android:id="@+id/action_updateKelahiran_to_listKelahiran"
+            app:destination="@id/listKelahiran" />
+        <argument
+            android:name="currentKelahiran"
+            app:argType="com.example.oop2.data.kelahiran.Kelahiran" />
+    </fragment>
+</navigation>
